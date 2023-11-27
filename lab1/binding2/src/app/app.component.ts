@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'my-app',
-  //standalone: true,
   template: `
     <!-- exercise 6 -->
     <div [class.isredbox]="isRed"></div>
