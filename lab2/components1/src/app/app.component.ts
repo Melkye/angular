@@ -7,7 +7,9 @@ import { Component } from '@angular/core';
     <h1>Ласкаво просимо {{ name }}!</h1>
     <h2>Hello Angular</h2>
     <p>Angular 16 представляє модульну архітектуру додатку</p>
-    <child-comp></child-comp>
+    <child-comp
+      ><h2>Ласкаво просимо {{ name }}!</h2></child-comp
+    >
     <p>Hello {{ name }}</p>`,
   styles: [
     `
@@ -19,5 +21,5 @@ import { Component } from '@angular/core';
   ],
 })
 export class AppComponent {
-  name = 'Петро';
+  name = 'Abuba';
 }

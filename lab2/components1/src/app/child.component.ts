@@ -2,7 +2,8 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'child-comp',
-  template: `<h2>Ласкаво просимо {{ name }}!</h2>`,
+  template: `<ng-content></ng-content>
+    <p>Привіт {{ name }}</p>`,
   styles: [
     `
       h2,
@@ -13,5 +14,5 @@ import { Component } from '@angular/core';
   ],
 })
 export class ChildComponent {
-  name = 'Тарас';
+  name = 'AbubaSon';
 }
