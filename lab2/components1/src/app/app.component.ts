@@ -2,7 +2,8 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
-  template: ` <label>Введіть ім'я:</label>
+  template: `
+    <label>Введіть ім'я:</label>
     <input [(ngModel)]="name" placeholder="name" />
     <h1>Ласкаво просимо {{ name }}!</h1>
     <h2>Hello Angular</h2>
@@ -10,16 +11,24 @@ import { Component } from '@angular/core';
     <child-comp
       ><h2>Ласкаво просимо {{ name }}!</h2></child-comp
     >
-    <p>Hello {{ name }}</p>`,
+    <p>Hello {{ name }}</p>
+    <child-comp [userName]="name2" [userAge]="age"></child-comp>
+    <input type="text" [(ngModel)]="name2" />
+  `,
   styles: [
     `
+      h3 {
+        color: navy;
+      }
       h2,
       p {
-        color: #333;
+        color: navy;
       }
     `,
   ],
 })
 export class AppComponent {
   name = 'Abuba';
+  name2: string = 'Abuba2';
+  age: number = 99;
 }
