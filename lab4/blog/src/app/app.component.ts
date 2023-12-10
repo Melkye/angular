@@ -1,14 +1,28 @@
 import { Component } from '@angular/core';
-// import { CommonModule } from '@angular/common';
-// import { RouterOutlet } from '@angular/router';
+
+export interface Post {
+  title: string;
+  text: string;
+  id?: number;
+}
 
 @Component({
   selector: 'app-root',
-  // standalone: true,
-  // imports: [CommonModule, RouterOutlet],
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
   title = 'blog';
+  posts: Post[] = [
+    { title: 'Вивчаю компоненти', text: 'Створюю проект "Блог"', id: 1 },
+    { title: 'Вивчаю директиви', text: 'Все ще створюю "Блог"', id: 2 },
+  ];
+
+  updatePosts(post: Post) {
+    this.posts.unshift(post);
+    console.log('Post', post);
+  }
+
+  deletePost(id: number) {
+    this.posts = this.posts.filter(p => p.id !== id);
+  }
 }
