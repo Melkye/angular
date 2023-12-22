@@ -1,10 +1,10 @@
 import {
   Component,
-  Input,
-  OnInit,
-  OnDestroy,
-  Output,
   EventEmitter,
+  Input,
+  OnDestroy,
+  OnInit,
+  Output,
 } from '@angular/core';
 import { Post } from '../app.component';
 
@@ -13,13 +13,15 @@ import { Post } from '../app.component';
   templateUrl: './post.component.html',
 })
 export class PostComponent implements OnInit, OnDestroy {
-  @Input() myPost!: Post;
+  @Input('toPost') myPost!: Post;
   @Output() onRemove = new EventEmitter<number>();
+
   constructor() {}
   removePost() {
     this.onRemove.emit(this.myPost.id);
   }
   ngOnInit(): void {}
+
   ngOnDestroy() {
     console.log('метод ngOnDestroy');
   }

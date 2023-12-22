@@ -4,6 +4,7 @@ export interface Post {
   title: string;
   text: string;
   id?: number;
+  date?: Date;
 }
 
 @Component({
@@ -11,10 +12,21 @@ export interface Post {
   templateUrl: './app.component.html',
 })
 export class AppComponent {
-  title = 'blog';
+  search = '';
+  title = 'Blog';
   posts: Post[] = [
-    { title: 'Вивчаю компоненти', text: 'Створюю проект "Блог"', id: 1 },
-    { title: 'Вивчаю директиви', text: 'Все ще створюю "Блог"', id: 2 },
+    {
+      title: 'Вивчаю компоненти',
+      text: 'Створюю проект "Блог"',
+      id: 1,
+      date: new Date(),
+    },
+    {
+      title: 'Вивчаю директиви',
+      text: 'Все ще створюю "Блог"',
+      id: 2,
+      date: new Date(),
+    },
   ];
 
   updatePosts(post: Post) {
@@ -23,6 +35,10 @@ export class AppComponent {
   }
 
   deletePost(id: number) {
+    console.log(id);
+    console.log(id !== 1);
+    console.log(undefined === undefined);
+
     this.posts = this.posts.filter(p => p.id !== id);
   }
 }
