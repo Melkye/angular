@@ -18,7 +18,9 @@ import { Component } from '@angular/core';
     <div>{{ money | currency : 'UAH' : 'Тільки сьогодні по ціні ' }}</div>
     <div>{{ message | slice : 6 : 11 | uppercase }}</div>
     <div>
-      Число до форматування: {{ x }}<br />Число після форматування:
+      Число до форматування: {{ x }}
+      <br />
+      Число після форматування:
       {{ x | format }}
     </div>
     <hr />
